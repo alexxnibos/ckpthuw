@@ -1,0 +1,353 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Quicksand ;
+    background-image: url("WhatsApp\ Image\ 2024-10-22\ at\ 20.57.31.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Overlay hitam dengan opacity 0.5 */
+    z-index: -1; /* Posisikan di belakang semua elemen lain */
+    pointer-events: none; /* Pastikan overlay tidak bisa di-klik */
+}
+
+.ckpthuw {
+    background: linear-gradient(to bottom, #FEFBF6, #ecb159);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header img {
+    height: 50px;
+}
+
+.order-button {
+    background-color: #f0a500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Main content */
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Card1 dengan overlay */
+.card1 {
+    position: relative;
+    margin: 20px auto;
+    max-width: 800px;
+    height: 400px;
+    background-image: url("Putih\ Kuning\ dan\ Biru\ Menu\ Baru\ Makanan\ Instagram\ Post\ \(2\).png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Overlay khusus di card1 */
+.card1 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+
+
+.card1 h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
+
+.card1 h1 span {
+    color: #f0a500;
+}
+
+.card1 img {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    transform: translateX(-50%);
+    width: 150px;
+}
+
+/* Reviews section */
+/* .review {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+} */
+
+
+/* .review p {
+    margin: 5px 0;
+    font-size: 14px;
+} */
+
+
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    height: 10%; /* Tinggi setiap baris */
+    color: white;
+}
+
+/* Konten marquee */
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 10px;
+    font-size: 24px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes scroll-right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.marquee:nth-child(odd) .marquee-content {
+    animation: scroll-right 15s linear infinite;
+}
+.marquee:nth-child(even) .marquee-content {
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Responsivitas untuk mobile */
+@media (max-width: 768px) {
+    .marquee-content {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .marquee {
+        height: 12%; /* Tinggi lebih besar di layar kecil */
+    }
+}
+/* Tulisan "KATA MEREKA" di tengah */
+.center-text {
+   background-color: #c8944591;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    width: 100%;
+   height: auto; 
+   border-radius: 10px;
+   text-align: center;
+   text-shadow: 
+   2px 2px 4px rgba(0, 0, 0, 0.7), /* Shadow hitam */
+   10px 10px 6px rgba(0, 0, 0, 0.5); /* Shadow oranye */
+    padding: 10px 9px;
+    margin: 0;
+}
+
+
+/* Why Section */
+.why-section {
+    position: relative;
+    background-image: url("WhatsApp Image 2024-10-22 at 20.57.31 (1).jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Overlay pada Why Section */
+.why-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan transparansi */
+    z-index: 1;
+}
+
+/* Konten dalam Why Section */
+.why-section h1 {
+    position: relative;
+    z-index: 2; /* Agar teks berada di atas overlay */
+    background: linear-gradient(to bottom, #FEFBF6, #ecb159);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+}
+
+.why-section h2{
+    position: relative;
+    z-index: 2; /* Agar teks berada di atas overlay */
+    color: #f3f3f3;
+    text-align: start;
+}
+
+.why-section p {
+    text-align: start;
+    position: relative;
+    z-index: 2; /* Agar teks berada di atas overlay */
+    color: white;
+}
+
+
+
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer .social-icons a {
+    color: #333;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #666;
+}
+
+.title {
+    background-color: #ecb159;
+    width: 190px;
+    height: 50px;
+    font-size: 22px;
+    padding-top: 1%;
+    border-radius: 15px;
+}
+
+/* Container khusus untuk pop-up */
+.review-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 50px auto;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Gaya dasar untuk pop-up */
+  .popup {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    animation: fade-in-out 1s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  /* Animasi muncul dan menghilang */
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .card1 h1 {
+        font-size: 28px;
+    }
+
+    .order-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card1 h1 {
+        font-size: 22px;
+    }
+
+    .card1 img {
+        width: 120px;
+    }
+
+    .card1 .logo {
+        width: 140px;
+        height: auto;
+        padding-bottom: 20px;
+    }
+}
